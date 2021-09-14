@@ -1,10 +1,10 @@
 [![Discord](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/ca6cWPpERp)
 # KnockFFA - V1.0.0 <!--[![](https://poggit.pmmp.io/shield.state/KnockFFA)](https://poggit.pmmp.io/p/KnockFFA) [![](https://poggit.pmmp.io/shield.dl.total/KnockFFA)](https://poggit.pmmp.io/p/KnockFFA)-->
 
-<h4 style="color: yellow; font-size: 17.4px;">A KnockFFA Plugin, written in PHP8.0 for PocketMine-MP 4</h4>
+<h4 style="color: yellow; font-size: 20.4px;">A KnockFFA Plugin, written in PHP8.0 for PocketMine-MP 4</h4>
 
 <br />
-<h5 style="color: skyblue;">You would like to player KnockFFA on your PM4 server, with automatic world change? Then this KnockFFA plugin is just right for you!</h5>
+<h4 style="color: skyblue;">You would like to player KnockFFA on your PM4 server, with automatic world change? Then this KnockFFA plugin is just right for you!</h4>
 
 
 ### Features
