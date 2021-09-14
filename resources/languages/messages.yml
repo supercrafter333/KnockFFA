@@ -1,0 +1,51 @@
+# custom messages
+
+#prefix
+prefix: "§f[§7Knock§bFFA§f] §8»§r "
+
+################################
+#most used messages
+no-perm: "You do not have permissions to use this!"
+only-In-Game: "Only In-Game!"
+
+
+################################
+# game messages
+
+## game join/leave
+game-join-broadcast: "§b{name}§a joined KnockFFA!"
+game-join: "§aWelcome to KnockFFA!"
+game-leave-broadcast: "§B{name}§c left KnockFFA!"
+
+## In-Game messages
+new-highestKillstreak: "§aYou reached a new heighest killstreak! §7[§e{killstreak}§7]"
+death-message: "§eYou was died!{line}§cTotal Deaths: §r{deaths}{line}§cKillstreak: §r{killstreak}{line}"
+killed-message: "§eYou got killed by §7{killer}§e!{line}§cTotal Deaths: §r{deaths}{line}§cKillstreak: §r{killstreak}{line}"
+kill-message: "§aYou've killed §7{name}§a!"
+### Map Change
+map-change-countdown: "§bMap-change in §e{seconds} Seconds§b!"
+map-change: "§eChanging Map..."
+map-change-done: "§aMap was changed to §7{map_name}§a!"
+
+
+
+
+################################
+#forms
+form-stats-select-title: "Stats"
+form-stats-select-content: "Please select a player."
+form-stats-select-playerInput: "Name"
+
+form-stats-stats-title: "Stats"
+form-stats-stats-stats: "§eStats of §7{name}§e:§r{line}{line}Kills: {kills}{line}Deaths: {deaths}{line}highest Killstreak: {highestKillstreak}{line}K/D: {KD}{line}"
+form-stats-stats-button-close: "§cClose{line}§7Leave this Menu"
+
+forms-player-not-found: "§cCannot found player §r{name}§c!"
+forms-missing-input: "§rPlease fill the field §7Name§r!"
+
+
+
+################################
+
+# DON'T CHANGE THIS
+version: "1.0.0"

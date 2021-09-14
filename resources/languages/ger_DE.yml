@@ -1,0 +1,51 @@
+# Here you can select the messages of theSpawn
+
+# ger_DE by @supercrafter333
+
+
+#prefix
+prefix: "§f[§7Knock§bFFA§f] §8»§r "
+
+################################
+#most used messages
+no-perm: "Du bist dazu nicht berechtigt!"
+only-In-Game: "Nur In-Game!"
+
+
+################################
+# game messages
+
+## game join/leave
+game-join-broadcast: "§b{name}§a ist KnockFFA beigetreten!"
+game-join: "§aWillkommen zu: §bKnockFFA!"
+game-leave-broadcast: "§B{name}§c hat KnockFFA verlassen!"
+
+## In-Game messages
+new-highestKillstreak: "§aDu hast einen neuen besten Killstreak erreicht! §7[§e{killstreak}§7]"
+death-message: "§eDu bist gestorben!{line}§cKillstreak: §r{killstreak}{line}"
+killed-message: "§eDu wurdest von §7{killer} getötet§e!{line}§cKillstreak: §r{killstreak}{line}"
+kill-message: "§aDu hast §7{name} getötet§a!"
+### Map Change
+map-change-countdown: "§bMap änderung in §e{seconds} Sekunden§b!"
+map-change: "§eÄndere Map..."
+map-change-done: "§aMap wurde geändert zu §7{map_name}§a!"
+
+
+
+
+################################
+#forms
+form-stats-select-title: "Stats"
+form-stats-select-content: "Bitte wähle einen Spieler."
+form-stats-select-playerInput: "Name"
+
+form-stats-stats-title: "Stats"
+form-stats-stats-stats: "§eStats von §7{name}§e:§r{line}{line}Kills: {kills}{line}Deaths: {deaths}{line}highest Killstreak: {highestKillstreak}{line}K/D: {KD}{line}"
+form-stats-stats-button-close: "§cSchließen{line}§7Verlasse das Menü"
+
+forms-player-not-found: "§cDer Spieler §r{name}§c konnte nicht gefunden werden!"
+forms-missing-input: "§rBitte fülle das Feld §7Name§r aus!"
+
+
+
+################################

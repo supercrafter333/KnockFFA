@@ -1,0 +1,39 @@
+############################################################################
+### KnockFFA (c) by supercrafter333 - Licensed under Apache License 2.0! ###
+############################################################################
+
+#written in php8.0, developed for PocketMine-MP 4
+
+
+
+### Configuration
+
+# Language
+# -> 'en_BE' - British English [default]
+# -> 'ger_DE' - German
+# -> 'CUSTOM' - Edit the messages yourself
+#
+# Chose you language here:
+language: "en_BE"
+
+# Game Options
+##default stuff
+spawn-height: 64
+give-items-height: 55
+death-height: 10
+give-new-arrows-after: 3 #seconds
+##array - worlds: []
+worlds: ["KnockFFA-1", "KnockFFA-2"]
+##world-change (Seconds) [300 = 5 minutes, 600 = 10 minutes ,...]
+world-change-after: 600
+##items
+###game items
+stick-name: "§bKnockback-Stick"
+bow-name: "§bSniper-Bow"
+###wait items
+stats-item-name: "§aStats"
+
+
+
+# DON'T CHANGE THIS!!
+version: "1.0.0"
