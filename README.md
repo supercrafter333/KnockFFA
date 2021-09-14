@@ -5,7 +5,7 @@
 
 <h4 style="color: skyblue;">You would like to player KnockFFA on your PM4 server, with automatic world change? Then this KnockFFA plugin is just right for you!</h3>
 
-You can found the [`.phar` file](https://github.com/supercrafter333/KnockFFA) on [Poggit](https://github.com/supercrafter333/KnockFFA). 
+You can found the [`.phar` file](https://poggit.pmmp.io/ci/supercrafter333/KnockFFA) on [Poggit](https://poggit.pmmp.io/ci/supercrafter333/KnockFFA). 
 
 <br />
 
