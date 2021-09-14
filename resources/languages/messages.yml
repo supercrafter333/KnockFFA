@@ -37,7 +37,7 @@ form-stats-select-content: "Please select a player."
 form-stats-select-playerInput: "Name"
 
 form-stats-stats-title: "Stats"
-form-stats-stats-stats: "§eStats of §7{name}§e:§r{line}{line}Kills: {kills}{line}Deaths: {deaths}{line}highest Killstreak: {highestKillstreak}{line}K/D: {KD}{line}"
+form-stats-stats-stats: "§eStats of §7{name}§e:§r{line}{line}Kills: {kills}{line}Deaths: {deaths}{line}K/D: {KD}{line}"
 form-stats-stats-button-close: "§cClose{line}§7Leave this Menu"
 
 forms-player-not-found: "§cCannot found player §r{name}§c!"

@@ -20,7 +20,7 @@ class StatsForms
      * @param Player $player
      * @return CustomForm
      */
-    public function openPlayerInput(Player $player): CustomForm
+    public function openPlayerInput(Player $player): CustomForm #INFORMATION: this function is inspired by @jibixyt
     {
         $form = new CustomForm(function (Player $player, array $data = null) {
             if (!isset($data["selected"]) || $data["selected"] === null || $data["selected"] == "") {
@@ -62,7 +62,7 @@ class StatsForms
         $form->setTitle(MsgMgr::getMsgWithNoExtras(MessageList::FORM_STATS_STATS_TITLE));
         if ($player instanceof FFAPlayer) {
             $ffaData = $player->getFFAData();
-            $content = str_replace(["{name}", "{kills}", "{deaths}", "{highestKillstreak}", "{KD}", "{line}"], [$player->getName(), $ffaData->getTotalKills(), $ffaData->getTotalDeaths(), $ffaData->getHighestKillstreak(), $ffaData->getKD(), "\n"], MsgMgr::getMsgWithNoExtras(MessageList::FORM_STATS_STATS_STATS));
+            $content = str_replace(["{name}", "{kills}", "{deaths}", "{KD}", "{line}"], [$player->getName(), $ffaData->getTotalKills(), $ffaData->getTotalDeaths(), $ffaData->getKD(), "\n"], MsgMgr::getMsgWithNoExtras(MessageList::FORM_STATS_STATS_STATS));
             $form->setContent($content);
         } else {
             $form->setContent("§cERROR! Can't load stats!");

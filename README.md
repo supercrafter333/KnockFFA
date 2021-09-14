@@ -17,6 +17,7 @@ You can found the [`.phar` file](https://poggit.pmmp.io/ci/supercrafter333/Knock
 ### TODOs
 - [ ] Scoreboard
 - [ ] K/D Leaderboard (in a Form)
+- [ ] Events
 
 ### Bugs - none
 You've found a Bug?
@@ -40,5 +41,7 @@ Owner: supercrafter333
 Helper: ---
 
 Icon: ---
+
+Information: Some little parts of this plugin are inspired from [@jibixyt](https://github.com/jibixyt)
 
 Discord-Tag: `supercrafter333#4062`

@@ -119,28 +119,6 @@ class FFAData
     }
 
     /**
-     * @param int $killstreak
-     * @return bool
-     */
-    public function setHighestKillstreak(int $killstreak): bool
-    {
-        if ($killstreak > $this->getHighestKillstreak()) {
-            $this->setPlayerData("highestKillstreak", $killstreak);
-            return true;
-        }
-        return false;
-    }
-
-    /**
-     * @return int
-     */
-    public function getHighestKillstreak(): int
-    {
-        if (!isset($this->getPlayerData()["highestKillstreak"])) return 0;
-        return (int)$this->getPlayerData()["highestKillstreak"];
-    }
-
-    /**
      * @return int|float
      */
     public function getKD(): float
@@ -158,7 +136,7 @@ class FFAData
         return [
             "totalKills" => $this->getTotalKills(),
             "totalDeaths" => $this->getTotalDeaths(),
-            "highestKillstreak" => $this->getHighestKillstreak()
+            "KD" => $this->getKD()
         ];
     }
 }

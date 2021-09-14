@@ -55,7 +55,7 @@ class StatsItem extends Totem
     /**
      * @param Player $player
      */
-    public function onUse(Player $player)
+    public function onUse(Player $player) #INFORMATION: this function is inspired by @jibixyt
     {
         $player->resetItemCooldown($this);
         $statsForms = new StatsForms();

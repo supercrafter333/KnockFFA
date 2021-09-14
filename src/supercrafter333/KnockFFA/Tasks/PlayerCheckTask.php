@@ -28,7 +28,7 @@ class PlayerCheckTask extends Task
                 $y = $onlinePlayer->getPosition()->getY();
                 //$pl->getUtils()->initializedCheck($onlinePlayer);
                 $onlinePlayer->extinguish();
-                if ($y <= GameOptions::$giveItemsHeight && $y > GameOptions::$deathHeight && !$onlinePlayer->getInventory()->contains(ItemFactory::getInstance()->get(ItemIds::STICK))) {
+                if ($y <= GameOptions::$giveItemsHeight && $y > GameOptions::$deathHeight && !$onlinePlayer->getInventory()->contains(ItemFactory::getInstance()->get(ItemIds::STICK))) { #INFORMATION: this check is inspired by @jibixyt
                     $onlinePlayer->giveFFAItems();
                 }
                 if ($y <= GameOptions::$deathHeight) {

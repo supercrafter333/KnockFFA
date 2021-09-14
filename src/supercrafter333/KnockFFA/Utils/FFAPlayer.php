@@ -67,7 +67,6 @@ class FFAPlayer extends Player
         $config = KnockFFA::getInstance()->getUtils()->getStatsConfig();
         $config->setNested($this->getName() . ".Kills", 0);
         $config->setNested($this->getName() . ".Deaths", 0);
-        $config->setNested($this->getName() . ".highestKillstreak", 0);
         $config->save();
     }
 
