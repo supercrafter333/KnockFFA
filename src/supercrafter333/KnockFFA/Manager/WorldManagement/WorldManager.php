@@ -4,6 +4,7 @@ namespace supercrafter333\KnockFFA\Manager\WorldManagement;
 
 use pocketmine\utils\AssumptionFailedError;
 use pocketmine\world\World;
+use supercrafter333\KnockFFA\Events\World\FFAWorldChangeEvent;
 use supercrafter333\KnockFFA\KnockFFA;
 use supercrafter333\KnockFFA\Manager\MessageManagement\MsgMgr;
 use supercrafter333\KnockFFA\Utils\FFAPlayer;
@@ -26,7 +27,12 @@ class WorldManager
      */
     public static function doWorldChange(World $newWorld = null): World
     {
-        if ($newWorld !== null) self::$selectedMap = $newWorld;
+        if ($newWorld !== null) {
+            $ev = new FFAWorldChangeEvent(self::getSelectedWorld(), $newWorld);
+            $ev->call();
+            if ($ev->isCancelled()) throw new AssumptionFailedError("[KnockFFA] -> Can't change the world because the 'FFAWorldChangeEvent' is cancelled!");
+            self::$selectedMap = $ev->getNewWorld();
+        }
         $realWorlds = [];
         foreach (KnockFFA::getInstance()->getConfig()->get("world", []) as $worldName) {
             $world = self::worldCheck($worldName);
@@ -37,7 +43,11 @@ class WorldManager
         if (!is_array($realWorlds) || count($realWorlds, COUNT_RECURSIVE) <= 0) {
             throw new AssumptionFailedError("[KnockFFA] -> Can't get a real world from config.yml");
         }
-        $newWorld = $realWorlds[array_rand($realWorlds)];
+        $preNewWorld = $realWorlds[array_rand($realWorlds)];
+        $ev = new FFAWorldChangeEvent(self::getSelectedWorld(), $preNewWorld);
+        $ev->call();
+        if ($ev->isCancelled()) throw new AssumptionFailedError("[KnockFFA] -> Can't change the world because the 'FFAWorldChangeEvent' is cancelled!");
+        $newWorld = $ev->getNewWorld();
         self::$selectedMap = $newWorld;
         foreach ($newWorld->getPlayers() as $worldPlayer) {
             if ($worldPlayer instanceof FFAPlayer) {

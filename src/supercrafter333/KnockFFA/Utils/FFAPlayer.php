@@ -8,6 +8,9 @@ use pocketmine\network\mcpe\NetworkSession;
 use pocketmine\player\Player;
 use pocketmine\player\PlayerInfo;
 use pocketmine\Server;
+use supercrafter333\KnockFFA\Events\FFAPlayer\FFAPlayerDeathEvent;
+use supercrafter333\KnockFFA\Events\FFAPlayer\FFAPlayerGiveItemsEvent;
+use supercrafter333\KnockFFA\Events\FFAPlayer\FFAPlayerPreDeathEvent;
 use supercrafter333\KnockFFA\Items\KnockBow;
 use supercrafter333\KnockFFA\Items\KnockStick;
 use supercrafter333\KnockFFA\Items\StatsItem;
@@ -151,10 +154,18 @@ class FFAPlayer extends Player
      */
     public function giveFFAItems(): void
     {
+        $ev = new FFAPlayerGiveItemsEvent($this, [
+            new KnockStick(KnockFFA::getInstance()->getConfig()->get("stick-name")),
+            new KnockBow(KnockFFA::getInstance()->getConfig()->get("bow-name"))
+        ]);
+        $ev->call();
+        if ($ev->isCancelled()) return; //Event cancelled, function stopped
         $inv = $this->getInventory();
-        $inv->clearAll();
-        $inv->addItem(new KnockStick(KnockFFA::getInstance()->getConfig()->get("stick-name")));
-        $inv->addItem(new KnockBow(KnockFFA::getInstance()->getConfig()->get("bow-name")));
+        $inv->clearAll(); //clear inventory before adding the items
+        //Add items from FFAPlayerGiveItemsEvent
+        foreach ($ev->getItems() as $item) {
+            $inv->addItem($item);
+        }
     }
 
     /**
@@ -174,6 +185,11 @@ class FFAPlayer extends Player
     public function fallAndDeath(): void
     {
         $pl = KnockFFA::getInstance();
+
+        $preEv = new FFAPlayerPreDeathEvent($this);
+        $preEv->call();
+        if ($preEv->isCancelled()) return; //Event cancelled, function stopped
+
         $death = $this->ffaData->addDeath();
         $this->setKillstreak(0);
         $this->extinguish();
@@ -184,12 +200,23 @@ class FFAPlayer extends Player
         $this->teleport($selWorld->getSafeSpawn());
         $this->giveWaitItems();
         $lastHitter = $this->getLastHitter();
+
         if ($lastHitter instanceof FFAPlayer) {
+
+            $ev = new FFAPlayerDeathEvent($this, true);
+            $ev->call();
+            if ($ev->isCancelled()) return; //Event cancelled, function stopped
+
             $this->sendMessage(str_replace(["{deaths}", "{killstreak}", "{killer}"], [$death, $this->killStreak, $this->getLastHitter()->getName()], MsgMgr::getMsg(MessageList::MSG_KILLED)));
             $lastHitter->sendMessage(str_replace(["{name}"], [$this->getName()], MsgMgr::getMsg(MessageList::MSG_KILL)));
             $this->resetLastHitter();
             return;
         }
+
+        $ev = new FFAPlayerDeathEvent($this);
+        $ev->call();
+        if ($ev->isCancelled()) return; //Event cancelled, function stopped
+
         $this->sendMessage(str_replace(["{deaths}", "{killstreak}"], [$death, $this->killStreak], MsgMgr::getMsg(MessageList::MSG_DEATH)));
     }
 }

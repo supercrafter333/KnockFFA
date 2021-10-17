@@ -1,5 +1,5 @@
 [![Discord](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/ca6cWPpERp)
-# KnockFFA - V1.0.0 <!--[![](https://poggit.pmmp.io/shield.state/KnockFFA)](https://poggit.pmmp.io/p/KnockFFA) [![](https://poggit.pmmp.io/shield.dl.total/KnockFFA)](https://poggit.pmmp.io/p/KnockFFA)-->
+# KnockFFA - V1.1.0 <!--[![](https://poggit.pmmp.io/shield.state/KnockFFA)](https://poggit.pmmp.io/p/KnockFFA) [![](https://poggit.pmmp.io/shield.dl.total/KnockFFA)](https://poggit.pmmp.io/p/KnockFFA)-->
 
 <h3 style="color: yellow; font-size: 20.4px;">A KnockFFA Plugin, written in PHP8.0 for PocketMine-MP 4.</h4>
 
@@ -17,7 +17,7 @@ You can found the [`.phar` file](https://poggit.pmmp.io/ci/supercrafter333/Knock
 ### TODOs
 - [ ] Scoreboard
 - [ ] K/D Leaderboard (in a Form)
-- [ ] Events
+- [X] Events
 
 ### Bugs - none
 You've found a Bug?
